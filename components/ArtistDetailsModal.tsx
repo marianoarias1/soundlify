@@ -48,6 +48,7 @@ export function ArtistDetailsModal({ artist, onClose }: Props) {
         const selectedArtist = artist
 
         async function getDetails() {
+            
             setLoading(true)
             setDetails(null)
 
@@ -62,7 +63,6 @@ export function ArtistDetailsModal({ artist, onClose }: Props) {
             setDetails(data)
             setLoading(false)
         }
-
         getDetails()
     }, [artist])
 
