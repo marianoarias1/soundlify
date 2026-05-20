@@ -127,7 +127,7 @@ export function ShareCard({
                             {genres.slice(0, 4).map((genre) => (
                                 <span
                                     key={genre}
-                                    className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs text-zinc-200 backdrop-blur-xl"
+                                    className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs text-zinc-200 backdrop-blur-xl whitespace-nowrap leading-none"
                                 >
                                     {genre}
                                 </span>
@@ -140,7 +140,7 @@ export function ShareCard({
                             Generated {generatedDate}
                         </p>
 
-                        <div className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm backdrop-blur-xl">
+                        <div className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm backdrop-blur-xl whitespace-nowrap leading-none">
                             {vibeEmoji} {vibeTitle}
                         </div>
                     </div>
@@ -327,7 +327,7 @@ export function ShareCard({
                         Soundlify
                     </p>
                     {timeRangeLabel && (
-                        <p className="mt-3 w-fit rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-medium text-zinc-200 backdrop-blur-xl">
+                        <p className="mt-3 w-fit rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-medium text-zinc-200 backdrop-blur-xl whitespace-nowrap leading-none">
                             {timeRangeLabel}
                         </p>
                     )}
