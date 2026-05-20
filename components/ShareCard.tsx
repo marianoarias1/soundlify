@@ -78,7 +78,7 @@ export function ShareCard({
     title = "My music snapshot",
     topTrackArtistName,
     topTrackImage,
-    vibeImages,
+    vibeImages = [],
     topTrackArtistImage,
 }: Props) {
     const theme = getVibeTheme(vibeTitle)

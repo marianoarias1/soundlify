@@ -45,13 +45,15 @@ export function ArtistDetailsModal({ artist, onClose }: Props) {
     useEffect(() => {
         if (!artist) return
 
+        const selectedArtist = artist
+
         async function getDetails() {
             setLoading(true)
             setDetails(null)
 
             const params = new URLSearchParams({
-                id: artist.id,
-                name: artist.name,
+                id: selectedArtist.id,
+                name: selectedArtist.name,
             })
 
             const response = await fetch(`/api/artist/details?${params.toString()}`)
