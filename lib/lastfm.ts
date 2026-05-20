@@ -2,6 +2,9 @@ type SpotifyArtist = {
   id: string
   name: string
   genres?: string[]
+  images?: {
+    url: string
+  }[]
 }
 
 type LastFmTag = {
@@ -11,6 +14,7 @@ type LastFmTag = {
 
 type ArtistWithGenres = SpotifyArtist & {
   genres: string[]
+
 }
 
 const blockedTags = new Set([
