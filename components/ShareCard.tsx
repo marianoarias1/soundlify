@@ -108,7 +108,7 @@ export function ShareCard({
                         </p>
 
                         {timeRangeLabel && (
-                            <p className="mt-3 w-fit rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-medium text-zinc-200 backdrop-blur-xl">
+                            <p className="mt-3 w-fit rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-medium text-zinc-200 backdrop-blur-xl whitespace-nowrap leading-none">
                                 {timeRangeLabel}
                             </p>
                         )}
