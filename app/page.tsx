@@ -1,65 +1,141 @@
-import Image from "next/image";
+import Link from "next/link"
+import { MotionFadeIn } from "@/components/MotionFadeIn"
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="relative min-h-screen overflow-hidden bg-black text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#1db95422,transparent_40%)]" />
+
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 py-20">
+        <div className="max-w-3xl">
+          <div className="mb-6 inline-flex items-center rounded-full border border-zinc-800 bg-zinc-900/60 px-4 py-2 text-sm text-zinc-300 backdrop-blur">
+            Soundlify
+          </div>
+
+          <h1 className="text-5xl font-black leading-none tracking-tight md:text-7xl">
+            Tus hábitos musicales,
+            <span className="block text-green-500">
+              convertidos en visuales.
+            </span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="mt-6 max-w-2xl text-lg text-zinc-400 md:text-xl">
+            Explorá tus artistas favoritos, canciones más escuchadas y el perfil
+            musical que define cómo escuchás Spotify.
           </p>
+
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <Link
+              href="/api/auth/login"
+              className="rounded-full bg-green-500 px-6 py-3 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-green-400"
+            >
+              Conectar Spotify
+            </Link>
+
+            <a
+              href="#preview"
+              className="rounded-full border border-zinc-800 px-6 py-3 text-sm font-medium text-zinc-300 transition hover:border-zinc-700 hover:bg-zinc-900"
+            >
+              Ver preview
+            </a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <MotionFadeIn delay={0.2}>
+          <section
+            id="preview"
+            className="mt-24 grid gap-4 md:grid-cols-3"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+            <div className="relative overflow-hidden rounded-3xl border border-zinc-900 bg-zinc-950 p-6">
+              <img
+                src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop"
+                alt="Artist"
+                className="absolute inset-0 h-full w-full object-cover opacity-30"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/20" />
+
+              <div className="relative z-10 flex h-[220px] flex-col justify-end">
+                <p className="text-sm text-zinc-300 mb-2">
+                  Top Artist
+                </p>
+
+                <h2 className="text-3xl font-bold">
+                  Arctic Monkeys
+                </h2>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-3xl border border-zinc-900 bg-zinc-950 p-6">
+              <img
+                src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1200&auto=format&fit=crop"
+                alt="Track"
+                className="absolute inset-0 h-full w-full object-cover opacity-30"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/20" />
+
+              <div className="relative z-10 flex h-[220px] flex-col justify-end">
+                <p className="text-sm text-zinc-300 mb-2">
+                  Top Track
+                </p>
+
+                <h2 className="text-3xl font-bold">
+                  Sweater Weather
+                </h2>
+
+                <p className="text-sm text-zinc-300 mt-1">
+                  The Neighbourhood
+                </p>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-3xl border border-zinc-900 bg-zinc-950 p-6">
+              <div className="absolute inset-0 grid grid-cols-2">
+                <img
+                  src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=1200&auto=format&fit=crop"
+                  alt=""
+                  className="h-full w-full object-cover opacity-25"
+                />
+
+                <img
+                  src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop"
+                  alt=""
+                  className="h-full w-full object-cover opacity-25"
+                />
+
+                <img
+                  src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1200&auto=format&fit=crop"
+                  alt=""
+                  className="h-full w-full object-cover opacity-25"
+                />
+
+                <img
+                  src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop"
+                  alt=""
+                  className="h-full w-full object-cover opacity-25"
+                />
+              </div>
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/30" />
+
+              <div className="relative z-10 flex h-[220px] flex-col justify-end">
+                <p className="text-sm text-zinc-300 mb-2">
+                  Perfil del oyente
+                </p>
+
+                <h2 className="text-3xl font-bold">
+                  🌎 Todo Terreno
+                </h2>
+
+                <p className="mt-2 text-sm text-zinc-300">
+                  Escuchás un poco de todo y cambiás mucho según el momento.
+                </p>
+              </div>
+            </div>
+          </section>
+        </MotionFadeIn>
+
+      </div>
+    </main>
+  )
 }
